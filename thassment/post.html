@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <form class="form" action="{% url 'sorted' keyword=1 %}" method="POST">
+      {% csrf_token %}
+
+      <input style="height: 40px" />
+
+      <button
+        type="submit"
+        style="height: 40px; width: 110px; margin-left: 40px"
+      >
+        Filter post
+      </button>
+    </form>
+    <h1>Posts</h1>
+    <ul>
+      {% for post in dct %}
+      <li>{{ post.title }}</li>
+      <p>{{inventory.supplier.name}}</p>
+      <p>
+        {% if inventory.availability == True %} Available {% else %} Not
+        Available {% endif %}
+      </p>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
