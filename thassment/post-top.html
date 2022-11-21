@@ -1,0 +1,23 @@
+<html>
+  <body>
+
+        Top Post
+      </button>
+    </form>
+    <h1>Posts</h1>
+    <ul>
+      {% for post in posts %}
+      <li>{{ post.title }}</li>
+      <p>{{post.id}}</p>
+      <p>{{post.body}}</p>
+      <p>{{post.numbercomments}}</p>
+      
+      {% endfor %}
+
+      <h1>post</h1>
+      <li>{{ posts.title }}</li>
+      <p>{{posts.id}}</p>
+      <p>{{output.body}}</p>
+    </ul>
+  </body>
+</html>

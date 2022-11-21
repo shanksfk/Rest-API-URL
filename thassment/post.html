@@ -1,9 +1,9 @@
 <html>
   <body>
-    <form class="form" action="{% url 'sorted' keyword=1 %}" method="POST">
+    <form class="form" action="{% url 'search' %}" method="POST">
       {% csrf_token %}
 
-      <input style="height: 40px" />
+      <input type="text" name="input" id="input" style="height: 40px" />
 
       <button
         type="submit"
@@ -14,14 +14,17 @@
     </form>
     <h1>Posts</h1>
     <ul>
-      {% for post in dct %}
+      {% for post in posts %}
       <li>{{ post.title }}</li>
-      <p>{{inventory.supplier.name}}</p>
-      <p>
-        {% if inventory.availability == True %} Available {% else %} Not
-        Available {% endif %}
-      </p>
+      <p>{{post.id}}</p>
+      <p>{{post.body}}</p>
+      
       {% endfor %}
+
+      <h1>post</h1>
+      <li>{{ post.title }}</li>
+      <p>{{post.id}}</p>
+      <p>{{post.body}}</p>
     </ul>
   </body>
 </html>
